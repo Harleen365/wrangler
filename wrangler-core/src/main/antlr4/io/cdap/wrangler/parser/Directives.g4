@@ -195,6 +195,11 @@ identifierList
  : Identifier (',' Identifier)*
  ;
 
+BYTE_SIZE : [0-9]+ ('.' [0-9]+)? BYTE_UNIT ;
+TIME_DURATION : [0-9]+ ('.' [0-9]+)? TIME_UNIT ;
+
+fragment BYTE_UNIT : [KkMmGgTt][Bb] ;
+fragment TIME_UNIT : 'ms' | 's' | 'm' | 'h' ;
 
 /*
  * Following are the Lexer Rules used for tokenizing the recipe.
